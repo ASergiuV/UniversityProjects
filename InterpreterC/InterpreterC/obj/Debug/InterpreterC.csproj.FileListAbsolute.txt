@@ -1,0 +1,9 @@
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\bin\Debug\InterpreterC.exe.config
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\bin\Debug\InterpreterC.exe
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\bin\Debug\InterpreterC.pdb
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.csprojResolveAssemblyReference.cache
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.csproj.CoreCompileInputs.cache
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.exe
+C:\Users\Ladi\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.pdb
+C:\Users\God\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.exe
+C:\Users\God\Desktop\InterpreterC\InterpreterC\obj\Debug\InterpreterC.pdb

@@ -1,0 +1,34 @@
+client
+	// //daca se inchide serverul, inchid si clientul
+	// bytes_recieved=recv(c,recv_data,1024,0);
+ 	// recv_data[bytes_recieved] = '\0';
+	// if (strcmp(recv_data , "q") == 0 || strcmp(recv_data , "Q") == 0) {
+	// 	close(c);
+	// 	break;
+	// }
+	// //daca inchid clientul ( INCHID SI SERVERUL )
+	// printf("\nApasa q sau Q pt Iesire: ");
+	// gets(send_data);
+	// if (strcmp(send_data , "q") == 0 || strcmp(send_data , "Q") == 0) {
+	// 	send(c,send_data,strlen(send_data), 0);   
+	// 	close(c);
+	// 	break;
+	// }
+
+
+server
+		// //serverul se inchide + terminam si clientul
+		// printf("\nApasa q sau Q pt Iesire: ");
+		// gets(send_data);
+		// if (strcmp(send_data , "q") == 0 || strcmp(send_data , "Q") == 0) {
+		// 	send(c, send_data,strlen(send_data), 0); 
+		// 	close(c);//sfarsitul deservirii clientului
+		// 	break;
+		// }  
+		// //clientul a iesit( INCHID SI SERVERUL )
+		// bytes_recieved = recv(c,recv_data,1024,0);
+		// recv_data[bytes_recieved] = '\0';
+		// if (strcmp(recv_data , "q") == 0 || strcmp(recv_data , "Q") == 0) {
+		// 	close(c);//sfarsitul deservirii clientului
+		// 	break;
+		// }

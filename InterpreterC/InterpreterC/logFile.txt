@@ -1,0 +1,52 @@
+Step-----0
+Execution stack:
+a=2-2
+(if a then v=2 else v=3;Print(v))
+Symbol table:
+Out table:
+File table:
+
+Step-----1
+Execution stack:
+(if a then v=2 else v=3;Print(v))
+Symbol table:
+a=>0
+Out table:
+File table:
+
+Step-----2
+Execution stack:
+if a then v=2 else v=3
+Print(v)
+Symbol table:
+a=>0
+Out table:
+File table:
+
+Step-----3
+Execution stack:
+v=3
+Print(v)
+Symbol table:
+a=>0
+Out table:
+File table:
+
+Step-----4
+Execution stack:
+Print(v)
+Symbol table:
+a=>0
+v=>3
+Out table:
+File table:
+
+Step-----5
+Execution stack:
+Symbol table:
+a=>0
+v=>3
+Out table:
+3
+File table:
+

@@ -1,0 +1,50 @@
+
+			(append 
+				(list(trans (car l) (+ m 1) (+ c (cadr l))))
+				(list
+				(trans (cddr l)(+ m 1) (+ c (cadddr l))))
+			)
+		
+
+
+(defun trans (l)
+	(cond 
+		(
+			(eq (cadr l) 0) 
+			(list (car l))
+		)
+		;((eq m c)
+			
+			
+		;);aici trebuie iesit din ramura stanga, aici se termina un arbore
+		
+		(t 
+			(cons 
+				(car l)
+				(list
+				(trans (cddr l))))
+				
+				
+			)
+		)
+	)
+
+(defun arbore_stang(lista noduri muchii)
+	(cond
+		((eq noduri (+ muchii 1)) (cdr lista))
+		(t
+			(append   (list (arbore_stang (cdr lista) (+ noduri 1) (+ muchii (cadr l)))))
+		)
+
+) 
+
+(defun arbore_drept(lista noduri mucii rezultat)
+	(cond 
+		
+		
+	)
+	
+	
+	
+	
+	

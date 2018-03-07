@@ -1,0 +1,4 @@
+even2([],1).
+even2([_|T],R):-
+    notR,
+    even2(T,R).

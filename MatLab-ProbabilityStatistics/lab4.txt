@@ -1,0 +1,39 @@
+normal distribution N(u, )
+student (T)
+
+litera greceasca x mai rotund la patrat (chi in romana , in engleza kai squared distribution cu un singur parametru )
+fisher distribution F(m,n),m,n apartin de N
+P(a<X<b)=F(b)-F(a)
+F(x)=P(X<=x)
+
+pdf cdf
+normcdf(x,u,t)-normal dist
+tcdf(x,n) -student 
+
+inv - in matlab e inversa cdf
+
+quantile of order alfa in (0,1)
+in q(indice alfa) real so that P(X<=q(indice alfa))=alfa
+
+asta imi zice ce arie am sub pdf in stanga sa
+ 
+
+daca am aceeasi arie la st si la dr , cuantila de ordin alfa e egala cu cuantila 1-alfa
+
+distribution option 
+option=input('1 for normal ,2 for student ..')
+OR
+option=input=('norm,T,Chi2,F','s')
+
+switch dupa variabila asta 
+
+switch option
+case 1 sau 'norm' (cum am ales din option)
+
+toata partea icnepan cu parametrii de la %normal dist pana la Af
+
+case 2 ..
+
+otherwise
+error('wrong option')
+end

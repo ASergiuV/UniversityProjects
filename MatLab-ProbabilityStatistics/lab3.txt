@@ -1,0 +1,50 @@
+variabile aleatoare definite de functie
+x:S->R
+
+discret r.v. X(S) inclus in R ,R is a discret set
+pdf - probability distribution function 
+
+pdf = tablou in care imi da val pe care le ia si probabilitatile 
+
+cdf - cumulative distribution function 
+F:R->R
+F(x)=P(X<=x) !!!!
+
+asta e def in general in cazul discret formula de calcul 
+F(x)=SUMA xi<=x pi 
+
+
+statistics toolbox el asociaza principalelor distributii niste functii 
+pdf
+cdf
+
+vrem sa vedem grafic astea 
+caracterul discret
+
+din cmd windows disttool
+
+binomial e ceva daca iti da nr fixat 
+
+distname pdf (x,par)
+	 cdf 
+
+ex: binopdf(x,n,p)
+
+
+lab3 apl
+n=3
+success: heads
+
+p=1/2
+
+
+exista fct rand - random
+genezeara random intre 0,1
+
+rand<1/2 simuleaza coin toss
+1 heads 
+0 tails
+
+1=true
+0=false
+

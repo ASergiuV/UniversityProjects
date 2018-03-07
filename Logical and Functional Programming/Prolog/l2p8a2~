@@ -1,0 +1,3 @@
+even([]).
+even([_|T]):-
+    not even(T).

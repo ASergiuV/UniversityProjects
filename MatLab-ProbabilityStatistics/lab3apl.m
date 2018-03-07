@@ -1,0 +1,11 @@
+n=3;
+p=0.5;
+clf
+x=0:2;
+ypdf=binopdf(x,n,p);
+subplot(2,1,1);
+plot(x,ypdf,'*')
+x2=0:0.01:2;
+subplot(2,1,2);
+ycdf=binocdf(x2,n,p);
+plot(x2,ycdf,'.')
