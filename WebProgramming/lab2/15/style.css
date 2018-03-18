@@ -1,0 +1,80 @@
+#menu * { 
+    padding:0; 
+    margin: 0; 
+    font: 12px georgia; 
+    list-style-type:none;
+  }
+  #menu { 
+    margin-top: 500px;
+    float: left;
+    line-height: 10px; 
+    left: 100px;
+    position:fixed;
+    bottom:0
+  }
+  #menu a { 
+    display: block; 
+    text-decoration: none; 
+    color: rgb(60, 189, 0);
+  }
+  #menu a:hover { background: rgb(5, 3, 156);}
+  #menu ul li ul li a:hover { 
+    background: #ECF1E7; 
+    padding-left:9px;
+    border-left: solid 1px #000;
+    
+  }
+  #menu ul li ul li {
+    width: 140px; 
+    border: none; 
+    color: rgb(181, 180, 252);  
+    padding-top: 3px; 
+    padding-bottom:3px; 
+    padding-left: 3px; 
+    padding-right: 3px; 
+    background: rgb(5, 3, 156);
+  }
+  #menu ul li ul li a { 
+    font: 11px arial; 
+    font-weight:normal; 
+    font-variant: small-caps; 
+    padding-top:3px; 
+    padding-bottom:3px;
+  }
+  #menu ul li {
+    float: left; 
+    width: 146px; 
+    font-weight: bold; 
+    border-top: solid 1px #270321; 
+    border-bottom: solid 1px #3de60a; 
+    background: rgb(39, 6, 158);
+    text-align: center;
+  }
+  #menu ul li a { 
+    font-weight: bold;
+    padding: 15px 10px;
+  }
+  #menu li {
+    position:relative; 
+    float:left;
+  }
+  #menu ul li ul, #menu:hover ul li ul, #menu:hover ul li:hover ul li ul {
+    display:none;
+    list-style-type:none;
+    width: 140px;
+  }
+  #menu:hover ul, #menu:hover ul li:hover ul, #menu:hover ul li:hover ul li:hover ul {
+    display:block;
+  }
+  #menu:hover ul li:hover ul li:hover ul {
+    position: absolute;
+    margin-left: 145px;
+    margin-top: -22px;
+    font: 10px;
+  }
+  #menu:hover ul li:hover ul {
+    position: absolute;
+    margin-top: 1px;
+    font: 10px;
+    bottom: 100%;
+  }

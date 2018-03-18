@@ -1,0 +1,70 @@
+.title{
+    font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.bargraph {     
+        height: 202px; 
+        position: relative; 
+        background:  url(http://pics.cssbakery.com/pics/papergrid.jpg) repeat-x; 
+        border-left: 1px solid #d4d4d4;
+        margin: 1px auto 5px;
+  }
+
+  .bargraph ul.bars {
+      margin: 0; 
+      padding: 0; 
+      /*getting rid of bullets*/
+      list-style-type: none;
+  }
+
+
+  .bargraph ul.bars li {  
+      position: absolute; 
+      width: 30px; 
+      height: 200px; 
+      /*move it up from bottom label*/
+      bottom: 0px; 
+      padding: 0; 
+      margin: 0; 
+      background: url(http://pics.cssbakery.com/pics/bars200.jpg) no-repeat;
+      text-align: center; 
+      font-weight: bold; 
+      color: white; 
+      line-height: 2.5em;
+      font-family: "Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;
+      font-size: 12px;
+      z-index: 99;
+  }
+
+  /*pt verde deschis merge dar pt restu nu*/
+  .bargraph ul.bars li span {
+    position: relative;
+    top: -25px;
+    color: #000000;
+ }
+
+  .bargraph ul.bars li.bar1 { left: 21px;  }
+  .bargraph ul.bars li.bar2 { left: 94px;  }
+  .bargraph ul.bars li.bar3 { left: 167px; }
+  .bargraph ul.bars li.bar4 { left: 240px; }
+  .bargraph ul.bars li.bar5 { left: 313px; }
+  .bargraph ul.bars li.bar6 { left: 386px; }
+  .bargraph ul.bars li.bar7 { left: 459px; }
+  .bargraph ul.bars li.bar8 { left: 532px; }
+  .bargraph ul.bars li.bar9 { left: 605px; }
+
+  /*bottom means 100% in background-position*/
+  .bargraph ul.bars li.bluebar  { background-position: 0px bottom; }
+  .bargraph ul.bars li.redbar   { background-position: -30px bottom; }
+  .bargraph ul.bars li.greenbar { background-position: -60px bottom; }
+  .bargraph ul.bars li.orangebar  {  background-position: -90px bottom; }
+  .bargraph ul.bars li.grapebar   {  background-position: -120px bottom; }
+  .bargraph ul.bars li.purplebar  {  background-position: -150px bottom; }
+  .bargraph ul.bars li.crimsonbar {  background-position: -180px bottom; }
+  .bargraph ul.bars li.navybar    {  background-position: -210px bottom; }
+  .bargraph ul.bars li.goldbar    {  background-position: -240px bottom; }
+  .bargraph ul.bars li.tealbar    {  background-position: -270px bottom; }
+
+
+
+ .bargraph p.centered { text-align: center; }
