@@ -1,0 +1,221 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+  
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .presentation {
+        position: relative;
+        width: 1024px;
+        height:85px;
+        z-index: 20;
+        background: #FFFFFF;
+    
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+input#txtSearch {
+    width: 9.5em !important;
+}
+txtSearch {
+    top: 7px;
+    right: 8px;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    position: absolute;
+    display: block;
+    text-indent: -9000px;
+    overflow: hidden;
+    background-color: transparent;
+    background-size: 25px auto;
+    background-position: 0 -58px;
+
+    background: url(img/searchbttn.png) no-repeat scroll 30px 30px;
+    padding-left:30px;
+}
+
+txtSearch{
+    background-size: 24px auto;
+    background-repeat: no-repeat;
+    background-image: url(img/searchbttn.jpg);
+
+    }
+  .searchform {
+    position: relative;
+    top: 0px;
+    left: 13px;
+    width: 10px;
+}
+ul {
+    height: 80px;
+    list-style-type: none;
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+    position:relative;
+    top:-20px;
+    left: 120px;
+    
+}
+
+ul li{
+  display: inline;
+
+}
+.search{
+    position: relative;
+    top: 0px;
+    left: 120px;
+
+}
+  .menu-lines{
+      position: relative;
+      top:30px;
+      width: 35px;
+      left: 200px;
+  }
+  input#txtSearch {
+    outline-offset: 0;
+    width: 11em;
+    height: 40px;
+    border: 0;
+    background: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #aaa;
+    padding: 0 35px 0 10px;
+    outline: 1px solid #cad9de;
+    transition: border .25s ease,outline .25s ease,width .25s ease,background .25s ease;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+  .menu-letters{
+      position: relative;
+      top: 30px;
+      left:90px;
+      font-weight: bold;
+      font-size: 20px;
+      color: #324B5C;
+
+  }
+span {
+    left: 0;
+    opacity: 1;
+    height: 4px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    background: #324b5c;
+    transition: all .35s ease-in-out;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+  .menu {
+    top: 5px;
+    width: 36px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+    margin-right: 11px;
+    display: inline-block;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+span.m1 {
+    top: 0px;
+}
+span.m2 {
+    top: 10px;
+}
+span.m3 {
+    top: 20px;
+}
+  article, aside, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+.oracle-logo{
+    height:100%;
+    width: 160px;
+  }
+.logo {
+    position: relative;
+    background-image: url("img/oracle.jpg");
+
+    background-repeat: no-repeat;
+    background-position: -5px -10px;
+    background-size: 170px;
+    float: left;
+    height: 85px;
+    width: 180px;
+  }
+  
+  
+  .search {
+    float: left;
+    background-color: #ffffff!important;
+    border: 1px solid transparent;
+    height: 45px;
+    width: 25%;
+    padding: 0 15px;
+    border-radius: 2px 0 0 2px;
+    font-size: 13px;
+    margin: -5px 0 0 35px;
+  }
+  
+  .search-icon {
+    float: left;
+    display: inline-block;
+    color: #ec5252;
+    margin-left: -39px;
+    font-size: 14px;
+    padding-top: 11px;
+  }
+  .user{
+      z-index: 22;
+  }
+  
+  .bcText{
+    top:20px;
+    background-color:#8C8C8C;
+    color: #fff;
+    height: 28px;
+    padding: 8px 0 0 0;
+    left:20px;
+    font-weight: 700;
+    font-size: 13px;
+    padding-left:20px;
+    color: #FFFFED;
+  }
+  .presentation:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    bottom:1px;
+    z-index:-1;
+    transform:scale(.9);
+    box-shadow: 0px 0px 1px 1px #000000;
+}
