@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="recipes.xsl"?>
+
+<catalog>
+	
+	<recipe>
+		<img> img/eggs.jpg </img>
+		<title>Boiled Eggs</title>
+		<ingredients>  
+			<ingredient>Eggs </ingredient>
+			<ingredient>Salt</ingredient>
+			<ingredient>Water</ingredient>  
+		</ingredients>
+		<type> Breakfast </type>
+		<preparationTime> 1h </preparationTime>
+		<servings> 1 </servings>
+	</recipe>
+	
+	<recipe>
+		<img> img/pork.jpg </img>
+		<title>Baked Pork Loin</title>
+		<ingredients>
+			<ingredient>Pork Loin</ingredient>
+			<ingredient>Salt</ingredient>
+			<ingredient>Bulion</ingredient>
+			<ingredient>Garlic</ingredient> 
+		</ingredients>
+		<type> Dinner </type>
+		<preparationTime> 1h </preparationTime>
+		<servings> 1 </servings>
+	</recipe>
+	
+	<recipe>
+		<img> img/soup.jpg </img>
+		<title>Soup</title>
+		<ingredients>  
+			<ingredient>Soup stuff</ingredient>
+			<ingredient>Salt</ingredient>
+			<ingredient>Water</ingredient>   
+		</ingredients>
+		<type> Lunch </type>
+		<preparationTime> 1h </preparationTime>
+		<servings> 3</servings>
+	</recipe>
+	
+	<recipe>
+		<img> img/shake.jpg </img>
+		<title>Protein shake</title>
+		<ingredients> 
+			<ingredient>Milk</ingredient> 
+			<ingredient>Whey protein</ingredient>
+		</ingredients>
+		<type> Desert </type>
+		<preparationTime> 1h </preparationTime>
+		<servings> 3</servings>
+	</recipe>
+
+	
+</catalog>
