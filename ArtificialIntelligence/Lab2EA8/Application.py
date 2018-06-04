@@ -25,7 +25,6 @@ if __name__ == '__main__':
 
     algorithm = Algorithm(A, S)
     ft = []
-    print("Population:")
     for i in range(no_of_iterations):
         population = algorithm.compute(population, mutation_probability)
         el = max(population.getAll(),key=lambda x: algorithm.fitness(x))

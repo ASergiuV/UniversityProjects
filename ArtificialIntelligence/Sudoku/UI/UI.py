@@ -9,7 +9,7 @@ class UI:
         self.__contr = Controller(self.__p)
 
     def readFile(self):
-        with open("board") as f:
+        with open("easyboard") as f:
             content = f.readlines()
         content = [x.strip() for x in content]
         content = [x.replace(' ', '') for x in content]
