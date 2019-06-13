@@ -1,0 +1,197 @@
+This project focuses on the creation of a compiler, based on the java programming language, using a fixed set of keywords, having some of the native java 
+types(int, bool, etc, array) and an user-typed one, the enum.
+
+The lexical analysis is done by reading the input file, keeping all it's contents in a string, and parsing throught the string. Whenever we find a specific
+codification, we add it to the pif and if it is an identifier or a constant, we also add it to the symbol table.
+
+The codifications are kept inside an enum:
+
+public enum Codification {
+
+    IDENTIFIER(0, "^[a-zA-Z][a-zA-Z0-9_]{0,7}$", ""),
+    MAIN(1, "MAIN"),
+    CURLY_BRACKET_OPEN(2, "{"),
+	...
+}
+
+The identifiers and constants are recognized by using a regex. In our case, an identifier can be 255 characters long.
+
+For identifying when a codification is a keyword or an identifier/ constant, we're using the getCodification function: 
+
+public static Codification getCodification(String name) {
+
+        for( Codification atom : Codification.values()) {
+            if( atom.name.equals(name.toUpperCase()))
+                return atom;
+        }
+
+        if( name.matches(Codification.IDENTIFIER.name)){
+            Codification.IDENTIFIER.setToken(name);
+            return Codification.IDENTIFIER;
+        }
+
+        if( name.matches(Codification.INT_CONST.name)){
+            Codification.INT_CONST.setToken(name);
+            return Codification.INT_CONST;
+        }
+
+        if( name.matches(Codification.BOOL_CONST.name)){
+            Codification.BOOL_CONST.setToken(name);
+            return Codification.BOOL_CONST;
+        }
+
+        if( name.matches(Codification.FLOAT_CONST.name)){
+            Codification.FLOAT_CONST.setToken(name);
+            return Codification.FLOAT_CONST;
+        }
+
+        if( name.matches(Codification.STRING_CONST.name)) {
+            Codification.STRING_CONST.setToken(name);
+            return Codification.STRING_CONST;
+        }
+
+        return null;
+
+    }
+	
+As I said above, the lexical analysis is done by keeping the contents of the input file in a string, that is done by doing this:
+
+	List<String> lines = Files.readAllLines(Paths.get(FILE_PATH));
+	StringBuilder sb = new StringBuilder();
+	lines.forEach( x-> sb.append(x.trim()).append(" "));
+	this.fileAsString = sb.toString().trim();	
+	
+Finding the specific keywords and atoms for generating the pif and symbol table is done by finding a separator, adding it to the pif
+
+        int pointer  = 1;
+        char separator = fileAsString.charAt(0);
+
+        if (SEPARATORS.contains(separator)){
+
+            fileAsString = fileAsString.substring(1).trim();
+            return Codification.getSeparatorCodification(separator);
+        }
+		
+And finding an atom by parsing until the next separator is found, or an error, which is thrown as a LexicalException( extended Exception class)
+
+
+        while(pointer < fileAsString.length()) {
+
+            separator = fileAsString.charAt(pointer);
+
+            if(SEPARATORS.contains(separator) || separator==' '){
+                String atom = fileAsString.substring(0, pointer).trim();
+
+                Codification codification = Codification.getCodification(atom);
+
+                if(codification == null) {
+                    throw new LexicalException("Undefined atom: " + atom);
+                }
+
+                fileAsString = fileAsString.substring(pointer).trim();
+
+                return codification;
+
+            }
+            pointer++;
+
+        }
+        throw new LexicalException("Missing separator after: " + fileAsString);
+		
+The pif is a List of pairs of integers, containing the code of the atom, and their respective position in the symbtol table, or -1
+
+public class Pif {
+
+    private List<Pair<Integer, Integer>> pif;
+
+    public Pif() {
+        pif = new ArrayList<>();
+    }
+
+    public void add(Pair<Integer,Integer> value) {
+        pif.add(value);
+    }
+	...
+}
+	
+The symbtol table is a binary search tree, each node of the tree keeps information about the value of the atom, and an index incremented on every add operation
+
+A node: 
+
+public class Node {
+    private int index;
+    private String value;
+    private Node left;
+    private Node right;
+	...
+}
+
+
+The symbol table:
+
+public class SymbolTable {
+
+    private BinarySearchTree binaryTree;
+
+    public SymbolTable() {
+        binaryTree = new BinarySearchTree();
+    }
+
+    public int add(String value) {
+        return this.binaryTree.add(value);
+    }
+
+    public int contains(String value){
+        return this.binaryTree.getIndex(value);
+    }
+
+    @Override
+    public String toString() {
+        return binaryTree.getOrder();
+    }
+
+
+}
+
+
+Handling the operations of adding to the pif, respectively to the symbol table are done in the main function, which uses these 2 methods:
+
+1.  public void addToPif(Integer code){
+        pif.add(new Pair<>(code, -1));
+    }
+
+2.  public void addToPifAndSymTbl(Integer code, String atom) {
+        int index = symTbl.contains(atom);
+        if( index > 0) {
+            pif.add(new Pair<>(code, index));
+        }
+        else {
+            pif.add(new Pair<>(code, symTbl.add(atom)));
+        }
+    }
+	
+And the whole lexical analyzer comes together as: 
+
+	while(!analyzer.isEnd()) {
+            Codification codification;
+            try{
+                codification = analyzer.read();
+            } catch (LexicalException e) {
+                System.out.println(e.getMessage());
+                return;
+            }
+
+            if(codification.id!=0 && codification.id < 33) {
+                program.addToPif(codification.id);
+            }
+
+            else if(codification.id == 0 || codification.id > 32){
+                program.addToPifAndSymTbl(codification.id, codification.token);
+            }
+
+            else {
+                throw new Exception("Error");
+            }
+    }
+
+The isEnd method tests if the file input string is empty or not

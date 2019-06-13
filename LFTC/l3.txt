@@ -1,0 +1,75 @@
+N : {
+     program, declist, declaration, smptype, 
+     cmptype, arraytype, cmpstmt, stmtlist, 
+     stmt, assignstmt, intassingstmt, intexpr,
+     term, fact, op1, op2,
+     boolassignstmt, boolexpr, relation,
+     link, tuppleassignstmt, iostmt, 
+     bodystmt, ifstmt, whilestmtm,
+     boolexprBool, boolexprInt 	
+}
+
+SIGMA : {
+
+	+ - * / = < > <= >= == != || && 
+	[ ] { } ( ) ;
+	IDENTIFIER
+	BOOLCONST
+	INTCONST
+	begin end 
+	int bool 
+	tupple 
+	true false 
+	if then else endif endelse
+	while endwhile
+	read write
+}
+
+S: program 
+
+P: 
+
+	program -> "VAR" declist SEP cmpstmt .
+	declist -> declaration SEP | decalration SEP declist
+	declaration -> smptype  IDENTIFIER | cmptype  IDENTIFIER | arraytype  IDENTIFIER
+	
+	smptype -> "BOOL" | "INT" 
+	cmptype -> "TUPLE" "<" smptype ">" "<" smptype ">"  IDENTIFIER
+	arraytype -> "ARRAY" "[" no "]" "OF" smptype | "ARRAY" "[" no "]" "OF" cmptype 
+	
+	cmpstmt -> "BEGIN" stmtlist "END"
+	stmtlist -> stmt SEP | stmt SEP stmtlist
+	
+	stmt -> assignstmt | iostmt | bodystmt 	
+	assignstmt -> intassingstmt | boolassignstmt | tuppleassignstmt
+			
+	intassingstmt -> IDENTIFIER "=" intexpr
+	intexpr -> term | intexpr op1 term
+	term -> fact term op2 | fact
+	fact -> IDENTIFIER | INT_CONST | "(" intexpr ")" 
+			
+	op1 -> "+"|"-"
+	op2 -> "*"|"/"
+
+	boolassignstmt -> IDENTIFIER "=" boolexpr 
+
+	boolexpr -> boolexprBool | boolexprInt | boolexprBool LINK boolexpr | boolexprInt LINK boolexpr
+
+	boolexprBool -> "==" BOOLCONST  | "!=" BOOLCONST | "=="  IDENTIFIER | "!="  IDENTIFIER
+	boolexprInt  -> relation INTCONST | realtion IDENTIFIER
+
+
+	relation -> "<" | ">" | "==" | "!=" | ">=" | "<="
+
+	link -> "&&" | "||"
+
+		 			 
+	tuppleassignstmt -> IDENTIFIER "(" ( expr ) ","( expr ) ")"
+	expr -> intexpr | boolexpr
+			
+	iostmt -> "READ" "(" IDENTIFIER ")" | "WRITE "("INTCONST")" | "WRITE "("BOOLCONST")" | "WRITE "("IDENTIFIER")" 
+
+	bodystmt -> ifstmt | whilestmt
+			
+	ifstmt = "IF" "(" boolexpr ")" "THEN" stmtlist "ENDIF" | "IF" "(" boolexpr ")" "THEN" stmtlist "ENDIF" "ELSE" stmtlist "ENDELSE"
+	whilestmt -> "WHILE" "(" boolexpr ")" stmtlist "ENDWHILE" 	
